@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<!-- Based on Hyperspace by HTML5 UP (html5up.net | @ajlkn) -->
+<html>
+
+<head>
+	<title>Blockchain demo</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+</head>
+
+<body class="is-loading">
+
+	<!-- Sidebar -->
+	<section id="sidebar">
+		<div class="inner">
+			<nav>
+				<ul>
+					<li><a id="menu-pay" href="pay.html?type=pay">Pay</a></li>
+					<li><a id="menu-collect" href="pay.html?type=collect">Collect</a></li>
+					<li><a id="menu-custom" href="pay.html?type=custom">Custom Transaction</a></li>
+					<li><a id="menu-history" href="history.html">History</a></li>
+					<li><a id="menu-register" href="register.html">Register</a></li>
+					<li><a id="menu-logout" href="index.html">Log Out</a></li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- payment -->
+		<section id="pay" class="wrapper style1 fade-up">
+			<div class="inner">
+				<h1 id="section-title">Pay</h1>
+				<div class="split style1">
+					<section>
+						<div id="section-payment">
+							<form id="pay-form" method="post" action="#">
+								<input type="hidden" name="senderaddress" id="senderaddress" value="" />
+								<input type="hidden" name="recipientaddress" id="recipientaddress" value=""  />
+								<div class="field">
+									<label for="amount">Amount (in RMB)</label>
+									<input type="number" name="amount" id="amount" step="0.01" min="0.01" required="required" value="0.00" />
+								</div>
+								<div class="field">
+									<label for="sender">Sender</label>
+									<input type="text" name="sender" id="sender" required="required" value="" />
+								</div>
+								<div class="field">
+									<label for="recipient">Recipient</label>
+									<input type="text" name="recipient" id="recipient" required="required" value="" />
+								</div>
+								<div class="field">
+									<label for="note">Note</label>
+									<input type="text" name="note" id="note" value="" />
+								</div>
+								<div class="actions">
+									<button id="pay-btn" class="button">transfer</button>
+									<img id="loading1-gif" src="images/waiting.gif" alt="loading" />
+								</div>
+							</form>
+						</div>
+						<div id="section-verify">
+							<form id="verify-form" method="post" action="#">
+								<div class="field">
+									<h3>Identity verification</h3>
+									<p>This is where a photo identification software can verify this persons identity</p>
+									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
+									<p>The photo identification software is expected to match the hash <span id="photo-hash">0x7a1e26c52f3280de75d33cae70706a93006982f5</span>.</p>
+								</div>
+								<div class="actions">
+									<button id="verify-btn" class="button">confirm</button>
+									<img id="loading2-gif" src="images/waiting.gif" alt="loading" />
+								</div>
+							</form>
+						</div>
+						<div id="section-complete">
+							<form id="complete-form" method="post" action="#">
+								<div class="field" id="success-msg-container">
+									<h3>Transfer successfully submitted</h3>
+									<p>It may take several seconds for the payment to be accepted to the blockchain</p>
+									<h3>Transaction summary</h3>
+									<p>TxHash: <span id="summary-txhash">0x7a1e26c52f3280de75d33cae70706a93006982f5</span><br /> Sender: <span id="summary-sender-name">name</span><br
+										/> Recipient: <span id="summary-sender-recipient">123456789012345678x</span><br />Amount: <span id="summary-amount"></span><br />	
+									</p>
+								</div>
+								<div class="field" id="error-msg-container">
+									<h3>Transfer request was not submitted</h3>
+									<p>The requested transfer does not meet the necessary requirements and was not submitted to the blockchain.</p>
+									<p class="invalid1-text"><span class="icon fa-exclamation-circle"></span>&nbsp;Please provide valid inputs. Note that a person's
+										ID should be written without spaces, dashes, or other special characters.</p>
+									<p class="invalid2-text"><span class="icon fa-exclamation-circle"></span>&nbsp;One or more of the accounts does not exist. Please register a new
+										account if you wish to transfer money.</p>
+									<p class="invalid3-text"><span class="icon fa-exclamation-circle"></span>&nbsp;One or more of the accounts does not have a valid photohash.  Please re-register the
+										account if you wish to transfer money to/from the specified person.</p>
+									<p class="invalid4-text"><span class="icon fa-exclamation-circle"></span>&nbsp;Something went wrong while submitting the request to a blockchain node. Please try again later.</p>
+								</div>
+								<div class="actions">
+									<button id="done-btn" class="button">done</button>
+									<button id="register-btn" class="button">register new account</button>
+									<button id="register2-btn" class="button">re-register account</button>
+									<button id="back-btn" class="button">go back</button>
+								</div>
+							</form>
+						</div>
+					</section>
+					<section>
+						<div id="sender-box" class="infobox">
+							<h3>Sender</h3>
+							<p><span class="info-name"></span><br /><span class="info-address"></span></p>
+							<p class="invalid-info">No/Invalid account</p>
+						</div>
+						<div id="recipient-box" class="infobox">
+							<h3>Recipient</h3>
+							<p><span class="info-name"></span><br /><span class="info-address"></span></p>
+							<p class="invalid-info">No/Invalid account</p>
+						</div>
+					</section>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- Scripts -->
+	<script src="js/lib/jquery.min.js"></script>
+	<script src="js/lib/async.min.js"></script>
+	<script src="js/lib/skel.min.js"></script>
+	<script src="js/lib/web3.min.js"></script>
+	<script src="js/util.js"></script>
+	<!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
+	<script src="js/script.js"></script>
+
+</body>
+
+</html>

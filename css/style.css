@@ -1,0 +1,32 @@
+#error-msg-container{
+    display:none;
+}
+
+.invalid1-text, .invalid2-text, .invalid3-text, .invalid4-text, .invalid-info {
+    display:none;
+}
+
+
+#section-verify, #section-complete, #loading-gif, #loading1-gif, #loading2-gif {
+    display:none;
+}
+
+.infobox {
+    border: solid 1px rgba(0, 0, 0, 0.15);
+    padding: 0.5em;
+    margin-bottom: 1em;
+    word-wrap: break-word;
+}
+
+#tx-table td, #tx-table th {
+    line-height: 1em;
+    padding:0.2em;
+    vertical-align:middle;
+}
+
+#tx-table td.td-info {
+    line-height: 1.5em;
+    padding:1.75em;
+    text-align: center;
+    vertical-align:middle;
+}

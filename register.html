@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<!-- Based on Hyperspace by HTML5 UP (html5up.net | @ajlkn) -->
+<html>
+
+<head>
+	<title>Blockchain demo</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+</head>
+
+<body class="is-loading">
+
+	<!-- Sidebar -->
+	<section id="sidebar">
+		<div class="inner">
+			<nav>
+				<ul>
+					<li><a id="menu-pay" href="pay.html?type=pay">Pay</a></li>
+					<li><a id="menu-collect" href="pay.html?type=collect">Collect</a></li>
+					<li><a id="menu-custom" href="pay.html?type=custom">Custom Transaction</a></li>
+					<li><a id="menu-history" href="history.html">History</a></li>
+					<li><a id="menu-register" href="register.html" class="active">Register</a></li>
+					<li><a id="menu-logout" href="index.html">Log Out</a></li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Login -->
+		<section id="register" class="wrapper style1 fade-up">
+			<div class="inner">
+				<h1 id="section-title">Register an account</h1>
+				<div class="split style1">
+					<section>
+						<div id="section-register">
+							<form id="register-form" method="post" action="#">
+								<div class="field">
+									<label for="personname">Name</label>
+									<input type="text" name="personname" id="personname" required="required" value="" />
+								</div>
+								<div class="field">
+									<label for="personid">Government ID number</label>
+									<input type="text" name="personid" id="personid" required="required" value="" />
+								</div>
+								<div class="field">
+									<h3>Identity verification</h3>
+									<span class="image"><img src="images/pic05.jpg" alt="" /></span>
+									<p>Use photo identification software to generate a lookup hash.</p>
+								</div>
+								<div class="actions">
+									<img id="loading-gif" src="images/waiting.gif" alt="loading" />
+									<button id="register-btn" class="button">register the account</button>
+								</div>
+							</form>
+						</div>
+						<div id="section-complete">
+							<form id="complete-form" method="post" action="#">
+								<div class="field" id="success-msg-container">
+									<h3>Account successfully registered</h3>
+									<p>It may take several seconds for the account to be accepted to the blockchain</p>
+									<h3>Transaction summary</h3>
+									<p>Government ID number: <span id="summary-personid"></span><br
+										/> Account Adress: <span id="summary-address"></span><br />Photo ID: <span id="summary-password"></span>
+									</p>
+								</div>
+								<div class="field" id="error-msg-container">
+									<h3>No account was registered.</h3>
+									<p>Something went wrong while trying to create the account.</p>
+									<p class="invalid1-text"><span class="icon fa-exclamation-circle"></span>&nbsp;Please provide valid inputs.</p>
+									<p class="invalid2-text"><span class="icon fa-exclamation-circle"></span>&nbsp;The requested account already exists.</p>
+									<p class="invalid3-text"><span class="icon fa-exclamation-circle"></span>&nbsp;Something went wrong while submitting the request to a blockchain node. Please try again later.</p>
+								</div>
+								<div class="actions">
+									<button id="back-btn" class="button">go back</button>
+								</div>
+							</form>
+						</div>
+					</section>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- Scripts -->
+	<script src="js/lib/jquery.min.js"></script>
+	<script src="js/lib/async.min.js"></script>
+	<script src="js/lib/skel.min.js"></script>
+	<script src="js/lib/web3.min.js"></script>
+	<script src="js/util.js"></script>
+	<!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
+	<script src="js/script.js"></script>
+
+</body>
+
+</html>

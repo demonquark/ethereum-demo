@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<!-- Based on Hyperspace by HTML5 UP (html5up.net | @ajlkn) -->
+<html>
+
+<head>
+	<title>Blockchain demo</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+</head>
+
+<body class="is-loading">
+
+	<!-- Sidebar -->
+	<section id="sidebar">
+		<div class="inner">
+			<nav>
+				<ul>
+					<li><a id="menu-pay" href="pay.html?type=pay">Pay</a></li>
+					<li><a id="menu-collect" href="pay.html?type=collect">Collect</a></li>
+					<li><a id="menu-custom" href="pay.html?type=custom">Custom Transaction</a></li>
+					<li><a id="menu-history" href="history.html">History</a></li>
+					<li><a id="menu-register" href="register.html">Register</a></li>
+					<li><a id="menu-login" href="index.html" class="active">Log In</a></li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Login -->
+		<section id="login" class="wrapper style1 fade-up">
+			<div class="inner">
+				<h1>Login</h1>
+				<div class="split style1">
+					<section>
+						<form id="login-form" method="post" action="#">
+							<div class="field">
+								<label for="name">Third Party Name</label>
+								<input type="text" name="name" id="name" required="required" value="" />
+							</div>
+							<div class="field">
+								<label for="password">Password</label>
+								<input type="password" name="password" id="password" required="required" value="" />
+							</div>
+							<div class="actions">
+								<button id="login-btn" class="button">log in</button>
+								<img id="loading-gif" src="images/waiting.gif" alt="loading" />
+							</div>
+						</form>
+					</section>
+				</div>
+				<div id="error-msg-container">
+					<p class="invalid1-text"><span class="icon fa-exclamation-circle"></span>&nbsp;Please provide a valid department name.</p>
+					<p class="invalid2-text"><span class="icon fa-exclamation-circle"></span>&nbsp;Please provide a valid password.</p>
+					<p class="invalid3-text"><span class="icon fa-exclamation-circle"></span>&nbsp;Please provide valid inputs.</p>
+				</div>
+			</div>
+		</section>
+
+	</div>
+	<!-- Scripts -->
+	<script src="js/lib/jquery.min.js"></script>
+	<script src="js/lib/skel.min.js"></script>
+	<script src="js/lib/web3.min.js"></script>
+	<script src="js/lib/async.min.js"></script>
+	<script src="js/util.js"></script>
+	<!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
+	<script src="js/script.js"></script>
+
+</body>
+
+</html>
